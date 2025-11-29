@@ -1,73 +1,189 @@
- 
-  #hero {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
+/* ===========================
+   HERO SECTION BASE STYLES
+=========================== */
+#hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
-  
-  
-  /* container that holds everything */
-  .hero-container {
-    margin-top:12rem;
-    position: relative; /* so bg-box can position itself inside */
-    width: 75%;
-    height: 57%;
-    display: flex;
-    flex-direction: row; 
-    
-    align-items: center;
-    border-radius: 70px;
-   
-    z-index: 0; 
-  }
-  
-  
-  
-  /* text and avatar above bg */
-  .text-container{
-    flex:2;
-    position: relative;
-    z-index: 1; /* above background */
-    margin-left: 7rem;
-  }
-  
-  /* avatar styling */
-  .avatar {
-    flex:1;
-    
-    position: relative;
-    z-index: 1; /* above background */
-    
-    height: 130%;
-    align-self: flex-end;
-    margin-right: 7rem;
-    
-    
-  }
+/* container that holds everything */
+.hero-container {
+  margin-top: 12rem;
+  position: relative;
+  width: 75%;
+  height: 57%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 70px;
+  z-index: 0;
+}
 
-  .socials{
-    margin: 1rem;
-    display: flex;
-    flex-direction: row;
-    width:20%;
-    justify-content: space-between;
-  }
-  .socials li{
-    list-style: none;
-    
-  }
-  .icon{
-    width:3rem;
-    height:3rem;
-    background-color: rgb(118, 156, 227);
-    border-radius: 30%;
-  }
-  .lucide {
-  padding:8px;
+/* text container */
+.text-container {
+  flex: 2;
+  position: relative;
+  z-index: 1;
+  margin-left: 7rem;
+}
+
+/* avatar styling */
+.avatar {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  height: 130%;
+  align-self: flex-end;
+  margin-right: 7rem;
+}
+
+/* socials */
+.socials {
+  margin: 1rem;
+  display: flex;
+  flex-direction: row;
+  width: 20%;
+  justify-content: space-between;
+}
+
+.socials li {
+  list-style: none;
+}
+
+.icon {
+  width: 3rem;
+  height: 3rem;
+  background-color: rgb(118, 156, 227);
+  border-radius: 30%;
+}
+
+.lucide {
+  padding: 8px;
   stroke: rgb(25, 11, 76);
 }
 
+/* ===========================
+   RESPONSIVE FIXES
+=========================== */
 
+/* Tablets and small laptops */
+@media (max-width: 1024px) {
+  .hero-container {
+    width: 90%;
+    height: auto;
+    padding: 2rem 0;
+  }
+
+  .text-container {
+    margin-left: 3rem;
+  }
+
+  .avatar {
+    margin-right: 3rem;
+    height: 100%;
+  }
+
+  .socials {
+    width: 40%;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+  #hero {
+    height: auto;
+    padding-top: 7rem; /* space from sticky header */
+  }
+
+  .hero-container {
+    margin-top: 2rem;
+    width: 90%;
+    height: auto;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    border-radius: 40px;
+  }
+
+  .text-container {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .avatar {
+    margin-right: 0;
+    height: 250px;
+    width: auto;
+    align-self: center;
+    margin-top: 1rem;
+  }
+
+  .socials {
+    width: 60%;
+    justify-content: space-around;
+  }
+
+  .icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  #hero {
+    padding-top: 8rem; /* slightly more space */
+  }
+
+  .hero-container {
+    margin-top: 1.5rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .avatar {
+    height: 220px;
+  }
+
+  .socials {
+    width: 70%;
+  }
+
+  .icon {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+}
+
+/* ===========================
+   FIX FOR iPHONE SE & SMALL HEIGHTS
+=========================== */
+
+/* devices with height < 700px (iPhone SE, small Androids) */
+@media screen and (max-height: 700px) {
+  #hero {
+    height: auto;
+    padding-top: 6rem; /* ensures hero never touches header */
+  }
+
+  .hero-container {
+    margin-top: 2.5rem !important;
+    height: auto;
+  }
+}
+
+/* very small screens (height < 600px) */
+@media screen and (max-height: 600px) {
+  #hero {
+    padding-top: 7.5rem;
+  }
+
+  .hero-container {
+    margin-top: 1.5rem !important;
+  }
+
+  .avatar {
+    height: 190px;
+  }
+}
