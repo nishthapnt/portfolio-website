@@ -1,36 +1,169 @@
-.footer {
-    position: relative;
-    height: 50vh; /* or whatever looks good */
-    overflow: hidden; /* hides extra wave area */
-    
+/* ---------------------- */
+/* Waves ABOVE the footer */
+/* ---------------------- */
+
+.wave-container {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  margin-bottom: -6px; /* removes line between wave & footer */
+  overflow: hidden;
+  z-index: 5;
+}
+
+/* ---------------------- */
+/* Footer base */
+/* ---------------------- */
+
+.footer-section {
+  background: transparent; /* Footer bg moved to .footer-bg */
+  position: relative;
+  overflow: visible;
+  padding: 0;
+}
+
+/* Actual visible footer background */
+.footer-bg {
+  background: linear-gradient(180deg, #0f2d5c 0%, #172554 100%);
+  padding: 80px 20px 20px;
+  margin-top: -50px; /* pulls the footer UP into the wave */
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  position: relative;
+  z-index: 10;
+  color: white;
+}
+
+/* ---------------------- */
+/* Layout */
+/* ---------------------- */
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.footer-content {
+  padding: 40px 0;
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
+  gap: 60px;
+  margin-bottom: 40px;
+}
+
+.footer-brand h3 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+  transition: 0.3s ease;
+}
+
+.footer-brand:hover h3 {
+  color: #b3d9f2;
+}
+
+.footer-brand p {
+  font-size: 14px;
+  color: #b3d9f2;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.footer-column h4 {
+  font-size: 16px;
+  color: #b3d9f2;
+  margin-bottom: 16px;
+}
+
+.footer-column ul li {
+  margin-bottom: 12px;
+}
+
+.footer-column a {
+  color: #d4e8f7;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.footer-column a:hover {
+  color: white;
+  transform: translateX(4px);
+}
+
+.footer-divider {
+  height: 1px;
+  margin: 40px 0;
+  background: linear-gradient(90deg, transparent, rgba(179,217,242,0.3), transparent);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer-bottom p {
+  font-size: 13px;
+  color: #a0b5c8;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 20px;
+}
+
+.social-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(179,217,242,0.15);
+  border: 1px solid rgba(179,217,242,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b3d9f2;
+  transition: 0.3s ease;
+}
+
+.social-icon:hover {
+  background: #b3d9f2;
+  color: #0f2d5c;
+  transform: translateY(-4px);
+}
+
+/* ---------------------- */
+/* Mobile */
+/* ---------------------- */
+
+@media (max-width: 900px) {
+  .footer-main {
+    grid-template-columns: 1fr;
   }
-  
-.waveContainer{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .footer-bg {
+    padding: 60px 16px 16px;
   }
-  
-  .waveContainer > .wave{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-      bottom: 0;
-      left: 0;
+
+  .footer-links {
+    grid-template-columns: 1fr;
   }
-  
-  .footerContent{
-    position: absolute;
-    width: 100%;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
+
+  .footer-bottom {
+    flex-direction: column;
     text-align: center;
-    color:white;
-    margin-bottom: 50px;
   }
-  
+}

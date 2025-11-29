@@ -1,11 +1,11 @@
-.design-section {
+.code-section {
   padding: 80px 20px;
-  background: white;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   min-height: 100vh;
   position: relative;
 }
 
-.design-section::before {
+.code-section::before {
   content: "";
   position: absolute;
   top: 0;
@@ -18,7 +18,7 @@
   pointer-events: none;
 }
 
-.design-container {
+.code-container {
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
@@ -34,61 +34,72 @@
   letter-spacing: -0.5px;
 }
 
-.design-gallery {
+.projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 35px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
 }
 
-.design-item {
+.project-card {
   background: white;
-  border-radius: 16px;
+  border-radius: 20px;
   overflow: hidden;
+  box-shadow: 0 4px 20px rgba(15, 45, 92, 0.08);
   transition: all 0.3s ease;
-  cursor: pointer;
-  border: 1px solid #e8f1f8;
+  border: 1px solid rgba(15, 45, 92, 0.1);
 }
 
-.design-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 35px rgba(15, 45, 92, 0.12);
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 40px rgba(15, 45, 92, 0.15);
 }
 
-.design-image {
+.project-image {
   width: 100%;
-  height: 250px;
+  height: 200px;
   background: linear-gradient(135deg, #b3d9f2 0%, #d4e8f7 100%);
   overflow: hidden;
-  position: relative;
 }
 
-.design-image img {
+.project-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
 }
 
-.design-item:hover .design-image img {
-  transform: scale(1.05);
-}
-
-.design-item h3 {
-  font-size: 20px;
+.project-card h3 {
+  font-size: 22px;
   font-weight: 600;
   color: #0f2d5c;
-  margin: 20px 16px 8px;
+  margin: 24px 20px 12px;
 }
 
-.design-item p {
+.project-card p {
   font-size: 14px;
   color: #556b82;
-  margin: 0 16px 16px;
+  margin: 0 20px 16px;
   line-height: 1.6;
 }
 
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 20px 20px;
+}
+
+.project-tags span {
+  background: #e8f1f8;
+  color: #0f2d5c;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
 @media (max-width: 768px) {
-  .design-section {
+  .code-section {
     padding: 60px 16px;
   }
 
@@ -97,7 +108,7 @@
     margin-bottom: 40px;
   }
 
-  .design-gallery {
+  .projects-grid {
     grid-template-columns: 1fr;
     gap: 24px;
   }
