@@ -12,7 +12,7 @@ function Hero() {
              Nishtha
           </h1>
           <h2 className="text-2xl md:text-3xl font-winky text-gray-700">
-            Designer & Frontend Developer
+            Designer & Developer
           </h2>
           <p className="text-lg md:text-xl text-gray-600 ">
             I create visually appealing and functional web experiences.
