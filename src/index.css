@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
+@import "tailwindcss";
+
+@theme{
+  --font-lilita:"Lilita One", sans-serif; ;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  
+}
+
+
+
+
+section:not(#footer) {
+  min-height: 100vh; /* 100% of the viewport height */
+  
+}
+body {
+  background-color: #fafafa;
+  background-image:
+    linear-gradient(#e0e0e0 1px, transparent 1.5px), 
+    linear-gradient(90deg, #e0e0e0 1px, transparent 1.5px); 
+    
+  background-size: 40px 40px;
+  background-attachment: fixed; 
+  animation: moveGrid 2s linear infinite;
+}
+
+/* Animation */
+@keyframes moveGrid {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 40px 40px, 40px 40px; /* moves one full grid unit diagonally */
+  }
+}
+
+/* body {
+  background-color: #fafafa;
+  background-image: radial-gradient(#e0e0e0 2px, transparent 2px);
+  background-size: 40px 40px;
+  background-attachment: fixed;
+  animation: moveDots 2s linear infinite;
+}
+
+@keyframes moveDots {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 40px 40px;
+  }
+} */
+
